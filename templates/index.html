@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <h1>Powerplant Coding Challenge</h1>
+        <br/>
+        <h2>Wait for it...</h2>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+        <script type="text/javascript" charset="utf-8">
+            var socket = io.connect('ws://0.0.0.0:5000');
+            socket.on('connect', function() {
+                socket.emit('connected');
+            });
+            socket.on('calculation_sent', function(data) {
+                $('h2').text(data)
+            });
+        </script>
+    </body>
+</html>

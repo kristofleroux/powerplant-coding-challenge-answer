@@ -1,0 +1,8 @@
+pyomo
+flask
+numpy
+pandas
+# matplotlib
+flask_socketio
+gevent
+gevent-websocket
